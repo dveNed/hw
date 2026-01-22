@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen">
+    <title>Marble Blast Mini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Menu Screen -->
+    <div id="menu-screen" class="screen">
+        <div class="menu-container">
+            <h1>Marble Blast Mini</h1>
+            <button id="start-btn" class="btn-large">Start Game</button>
+            <button id="settings-btn" class="btn-large">Settings</button>
+            <div id="best-times" class="best-times"></div>
+        </div>
+    </div>
+
+    <!-- Level Select Screen -->
+    <div id="level-select-screen" class="screen hidden">
+        <div class="menu-container">
+            <h2>Select Level</h2>
+            <div id="level-buttons" class="level-grid"></div>
+            <button id="back-to-menu-btn" class="btn-medium">Back</button>
+        </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div id="settings-screen" class="screen hidden">
+        <div class="menu-container">
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="gyro-toggle">
+                    Use Gyroscope (if available)
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="sound-toggle" checked>
+                    Sound Effects
+                </label>
+            </div>
+            <button id="settings-back-btn" class="btn-medium">Back</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div id="game-ui">
+            <div class="ui-top">
+                <div id="timer">0.00s</div>
+                <div id="level-name">Level 1</div>
+                <button id="pause-btn" class="btn-small">⏸</button>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Touch Control Overlay -->
+        <div id="touch-overlay"></div>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div id="pause-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>Paused</h2>
+            <button id="resume-btn" class="btn-medium">Resume</button>
+            <button id="reset-level-btn" class="btn-medium">Reset Level</button>
+            <button id="quit-btn" class="btn-medium">Quit to Menu</button>
+        </div>
+    </div>
+
+    <!-- Level Complete Overlay -->
+    <div id="complete-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>Level Complete!</h2>
+            <div id="complete-time"></div>
+            <div id="complete-best"></div>
+            <button id="next-level-btn" class="btn-medium">Next Level</button>
+            <button id="retry-btn" class="btn-medium">Retry</button>
+            <button id="complete-quit-btn" class="btn-medium">Level Select</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
